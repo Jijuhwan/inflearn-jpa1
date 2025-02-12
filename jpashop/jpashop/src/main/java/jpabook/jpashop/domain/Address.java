@@ -9,4 +9,14 @@ public class Address {
     private String city;
     private String street;
     private String zipcode;
+
+    // Spec상 Protected로 선언,
+    protected Address() {
+    }
+
+    public Address(String city, String street, String zipcode){
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
 }

@@ -12,6 +12,7 @@ spring:
       hibernate:
   #      show_sql: true
         format_sql: true
+        create_temp_table_as_select: false
 
 logging:
   level:
