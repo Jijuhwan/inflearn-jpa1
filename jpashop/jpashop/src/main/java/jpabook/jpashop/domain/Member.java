@@ -21,5 +21,11 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member") // 읽기 전용이 되며, Order가 주인이됨.
-    private List<Order> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>(); // 필드에서 초기화시 가장 좋은 형태
+
+    /* 아래 같은 방식으로 초기화할 수 있지만 현재 형태가 좋음.
+    public Member() {
+        orders = new ArrayList<>();
+    }
+     */
 }
