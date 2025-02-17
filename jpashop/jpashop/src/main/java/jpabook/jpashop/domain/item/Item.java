@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter // @Setter Setter를 가지고 변환하는게 아닌 비즈니스 로직을 통해 변경하는게 객체지향 적인것
+@Getter @Setter //Setter를 가지고 변환하는게 아닌 비즈니스 로직을 통해 변경하는게 객체지향 적인것
 public abstract class Item {
     @Id @GeneratedValue
     @Column(name = "item_id")
