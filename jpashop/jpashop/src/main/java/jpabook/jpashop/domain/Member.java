@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +16,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    @NotEmpty
     private String name;
 
     @Embedded   // 내장 타입을 지시하는 어노테이션 (Address 또는 Member에서 호출하는 변수 중 하나만 지시해도 되나 둘다 지시하는게 좋음)
