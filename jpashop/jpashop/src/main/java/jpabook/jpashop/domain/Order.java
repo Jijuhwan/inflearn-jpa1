@@ -18,11 +18,11 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne(fetch = LAZY)        // LAZY로 되어 있기에 member는 손을 안댐 -> EAGER로 할 경우 N+1 문제 발생
     @JoinColumn(name = "member_id")
-    private Member member;
+    private Member member;          // new ProxyMember() 처럼 상속받아서 member를 가져옴(bytebuddy)
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)   // 1:N은 기본이 LAZY
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)   // 직접 액세스하는게 많은 곳에 넣는 곳이 좋다.(1:1 관계 한정)
