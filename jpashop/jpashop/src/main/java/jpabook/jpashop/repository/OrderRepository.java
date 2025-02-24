@@ -11,6 +11,8 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+// 가급적 순수한 조회용으로 쓰는게 좋으며, 성능 최적화를 위해 fetch 조인을 사용하는 것이 좋다.
+
 @Repository
 @RequiredArgsConstructor
 public class OrderRepository {
