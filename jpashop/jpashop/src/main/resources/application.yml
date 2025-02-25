@@ -13,6 +13,7 @@ spring:
   #      show_sql: true
         format_sql: true
         create_temp_table_as_select: false
+        default_batch_fetch_size: 100
 
 logging:
   level:
